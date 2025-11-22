@@ -12,3 +12,4 @@ C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\refint\Red
 C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.pdb
 C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.genruntimeconfig.cache
 C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\ref\RedBlackTree.dll
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.sourcelink.json
