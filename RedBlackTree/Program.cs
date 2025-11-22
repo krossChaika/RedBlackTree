@@ -1,4 +1,7 @@
-﻿namespace RedBlackTree;
+﻿using System;
+using System.Collections.Generic;
+
+namespace RedBlackTree;
 
 class Program
 {
