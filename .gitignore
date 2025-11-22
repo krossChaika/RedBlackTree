@@ -6,8 +6,6 @@
 # dotenv files
 .env
 
-# */obj/[Dd]ebug/*
-
 # User-specific files
 *.rsuser
 *.suo
