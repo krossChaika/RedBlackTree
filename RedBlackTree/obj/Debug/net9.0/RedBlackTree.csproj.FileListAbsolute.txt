@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\bin\Debug\net9.0\RedBlackTree.exe
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\bin\Debug\net9.0\RedBlackTree.deps.json
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\bin\Debug\net9.0\RedBlackTree.runtimeconfig.json
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\bin\Debug\net9.0\RedBlackTree.dll
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\bin\Debug\net9.0\RedBlackTree.pdb
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.AssemblyInfo.cs
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.dll
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\refint\RedBlackTree.dll
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.pdb
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\RedBlackTree.genruntimeconfig.cache
+C:\Users\user\source\repos\RedBlackTree\RedBlackTree\obj\Debug\net9.0\ref\RedBlackTree.dll
