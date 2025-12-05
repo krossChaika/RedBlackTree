@@ -7,7 +7,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        var tree = new RedBlackTree<object?>(50, null);
+        var tree = new RedBlackTree<MusicInstrument>();
+        tree.Insert(50, null);
         
         const int keysCount = 20;
         List<int> keysHistory = new(keysCount) {50};
@@ -22,7 +23,7 @@ class Program
             }
             
             Console.WriteLine($"added {newKey}");
-            tree.Insert(newKey, null);
+            tree.Insert(newKey, new MusicInstrument(newKey, $"id-{newKey}", newKey));
             keysHistory.Add(newKey);
         }
         
@@ -42,7 +43,7 @@ class Program
         }
 
         // tree.Set(29, "asd");
-        // Console.WriteLine(tree.Get(29));
+        Console.WriteLine(tree.Get(29));
 
         // int[] keys = [20,30,40,];//50,60,70,80
         // foreach (var key in keys)
