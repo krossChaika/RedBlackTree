@@ -38,6 +38,11 @@ public class RedBlackTree<T>
 {
     public Node<T> Root;
     public static readonly Node<T> NullNode = new (-1, default, NodeColor.Black);
+
+    public RedBlackTree()
+    {
+        Root = NullNode;
+    }
     
     public RedBlackTree(int initialKey, T initialValue)
     {
@@ -303,9 +308,18 @@ public class RedBlackTree<T>
 
     public void Insert(int key, T value)
     {
-        Node<T> newNode = new (key, value, NodeColor.Red);
-        newNode.Left = NullNode;
-        newNode.Right = NullNode;
+        Node<T> newNode = new (key, value, NodeColor.Red)
+        {
+            Left = NullNode,
+            Right = NullNode
+        };
+
+        if (Root == NullNode || Root is null)
+        {
+            newNode.Color = NodeColor.Black;
+            Root = newNode;
+            return;
+        }
 
         Node<T> current = Root;
         Node<T> parent = null;
