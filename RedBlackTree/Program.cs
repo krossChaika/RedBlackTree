@@ -85,7 +85,7 @@ class Program
             sw.Restart();
             var foundTree = tree.Get(key);
             sw.Stop();
-            totalTicksTree += sw.ElapsedTicks;
+            totalTicksTree += sw.ElapsedTicks; 
         }
 
         Console.WriteLine($"LinearSearch average: {totalTicksLinear / testCount} ticks");
