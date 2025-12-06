@@ -1,6 +1,6 @@
 ﻿using RedBlackTree;
 namespace Linear;
- 
+
 public class LinearSearch
 {
     private List<MusicInstrument> items = new List<MusicInstrument>();
