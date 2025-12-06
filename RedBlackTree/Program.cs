@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
+using Linear;
 namespace RedBlackTree;
 
 class Program
@@ -8,42 +9,90 @@ class Program
     static void Main(string[] args)
     {
         var tree = new RedBlackTree<MusicInstrument>();
-        tree.Insert(50, null);
-        
-        const int keysCount = 20;
-        List<int> keysHistory = new(keysCount) {50};
+        var linAlg = new LinearSearch();
+        //tree.Insert(50, null);
+
+        const int keysCount = 10000;
+        List<int> keysHistory = new(keysCount) {};
         var random = new Random(10);
         
-        for (int i = 0; i < keysCount; i++)
+        for (int i = 0; i < keysCount; i++) //цикл генерации елементов
         {
-            int newKey = random.Next(0, 100);
+            int newKey = random.Next(0, 10000);
             while (keysHistory.Contains(newKey))
             {
-                newKey = random.Next(0, 100);
+                newKey = random.Next(0, 10000);
             }
-            
-            Console.WriteLine($"added {newKey}");
+
             tree.Insert(newKey, new MusicInstrument(newKey, $"id-{newKey}", newKey));
+            linAlg.Insert(new MusicInstrument(newKey, $"id-{newKey}", newKey)); 
+
+            //Console.WriteLine($"added {newKey}"); //временно для дебага
             keysHistory.Add(newKey);
         }
-        
-        // tree.Delete(95);
 
-        for (int i = 0; i < 10; i++)
+
+        //для теста дерева/списка удаление елементов
+        /*for (int i = 0; i < 10; i++)
         {
             int key = keysHistory[random.Next(0, keysHistory.Count)];
-            Console.WriteLine($"deleted {key}");
+            Console.WriteLine($"deleted {key}"); //временно для дебага
             tree.Delete(key);
+            linAlg.Delete(key);
+
             keysHistory.Remove(key);
-        }
-        RedBlackVisualizer.Visualize(tree.Root);
-        foreach (var key in keysHistory)
+        }*/
+
+        //RedBlackVisualizer.Visualize(tree.Root); //показывает структуру дерева
+
+
+        //показывает все ключи(проверить корректность удаления при дебаге)
+        /*foreach (var key in keysHistory) 
         {
             Console.WriteLine(key);
+        }*/
+
+
+        //ручные тесты получения елементов
+        // tree.Set(29, "asd");
+        /*Console.WriteLine(tree.Get(29));
+        Console.WriteLine(tree.Get(45));
+        Console.WriteLine(tree.Get(69));
+        Console.WriteLine(tree.Get(94));*/
+        //Console.WriteLine("-----");
+        //Console.WriteLine(linAlg.Get(94));
+        //linAlg.ShowAll(); //все елементы списка
+
+
+        //усредненное время поиска елементв
+        int testCount = 1000; // кол-во тестируемых елементов
+        long totalTicksLinear = 0;
+        long totalTicksTree = 0;
+
+        var rand = new Random(10);
+
+        for (int i = 0; i < testCount; i++)
+        {
+            int key = keysHistory[rand.Next(keysHistory.Count)];
+
+            // LinearSearch
+            Stopwatch sw = Stopwatch.StartNew();
+            var foundLinear = linAlg.Get(key);
+            sw.Stop();
+            totalTicksLinear += sw.ElapsedTicks;
+
+            // RedBlackTree
+            sw.Restart();
+            var foundTree = tree.Get(key);
+            sw.Stop();
+            totalTicksTree += sw.ElapsedTicks;
         }
 
-        // tree.Set(29, "asd");
-        Console.WriteLine(tree.Get(29));
+        Console.WriteLine($"LinearSearch average: {totalTicksLinear / testCount} ticks");
+        Console.WriteLine($"RedBlackTree average: {totalTicksTree / testCount} ticks");
+        Console.WriteLine($"RedBlackTree is {(totalTicksLinear / testCount) / (totalTicksTree / testCount)} times faster");
+
+
 
         // int[] keys = [20,30,40,];//50,60,70,80
         // foreach (var key in keys)
@@ -52,8 +101,8 @@ class Program
         // }
         // tree.Delete(30);
         // RedBlackVisualizer.Visualize(tree.Root);
-        
-        Console.ReadLine();
+
+        //Console.ReadLine();
     }
 }
 
